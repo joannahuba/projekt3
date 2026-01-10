@@ -1,0 +1,61 @@
+year,station,city,exceeded
+2014,DsWrocAlWisn,Wrocław,120
+2014,KpBydPlPozna,Bydgoszcz,101
+2014,LdLodzCzerni,Łódź,131
+2014,LdZgieMielcz,Zgierz,95
+2014,LuZielKrotka,Zielona Góra,105
+2014,MpKrakAlKras,Kraków,153
+2014,MpKrakBulwar,Kraków,123
+2014,MzLegZegrzyn,Legionowo,121
+2014,MzPlocMiReja,Płock,108
+2014,MzRadTochter,Radom,126
+2014,MzSiedKonars,Siedlce,116
+2014,MzWarAlNiepo,Warszawa,144
+2014,MzWarWokalna,Warszawa,114
+2014,MzZyraRoosev,Żyrardów,119
+2014,OpKKozBSmial,Kędzierzyn-Koźle,126
+2014,PkPrzemGrunw,Przemyśl,107
+2014,SlKatoKossut,Katowice,113
+2014,SlZlotPotLes,Złoty Potok,88
+2014,WmOlsPuszkin,Olsztyn,114
+2014,WpKaliSawick,Kalisz,135
+2019,DsWrocAlWisn,Wrocław,69
+2019,KpBydPlPozna,Bydgoszcz,92
+2019,LdLodzCzerni,Łódź,73
+2019,LdZgieMielcz,Zgierz,110
+2019,LuZielKrotka,Zielona Góra,41
+2019,MpKrakAlKras,Kraków,122
+2019,MpKrakBulwar,Kraków,79
+2019,MzLegZegrzyn,Legionowo,87
+2019,MzPlocMiReja,Płock,76
+2019,MzRadTochter,Radom,83
+2019,MzSiedKonars,Siedlce,84
+2019,MzWarAlNiepo,Warszawa,126
+2019,MzWarWokalna,Warszawa,69
+2019,MzZyraRoosev,Żyrardów,74
+2019,OpKKozBSmial,Kędzierzyn-Koźle,74
+2019,PkPrzemGrunw,Przemyśl,68
+2019,SlKatoKossut,Katowice,96
+2019,SlZlotPotLes,Złoty Potok,63
+2019,WmOlsPuszkin,Olsztyn,55
+2019,WpKaliSawick,Kalisz,79
+2024,DsWrocAlWisn,Wrocław,69
+2024,KpBydPlPozna,Bydgoszcz,59
+2024,LdLodzCzerni,Łódź,63
+2024,LdZgieMielcz,Zgierz,75
+2024,LuZielKrotka,Zielona Góra,68
+2024,MpKrakAlKras,Kraków,83
+2024,MpKrakBulwar,Kraków,67
+2024,MzLegZegrzyn,Legionowo,51
+2024,MzPlocMiReja,Płock,60
+2024,MzRadTochter,Radom,73
+2024,MzSiedKonars,Siedlce,39
+2024,MzWarAlNiepo,Warszawa,68
+2024,MzWarWokalna,Warszawa,47
+2024,MzZyraRoosev,Żyrardów,62
+2024,OpKKozBSmial,Kędzierzyn-Koźle,55
+2024,PkPrzemGrunw,Przemyśl,68
+2024,SlKatoKossut,Katowice,76
+2024,SlZlotPotLes,Złoty Potok,56
+2024,WmOlsPuszkin,Olsztyn,62
+2024,WpKaliSawick,Kalisz,77
