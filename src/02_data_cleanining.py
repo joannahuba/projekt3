@@ -21,13 +21,15 @@ logger.info(f"Wczytano metadane: {meta_df.shape[0]} stacji")
 logger.info(f"Kolumny metadanych: {list(meta_df.columns)}")
 
 # -------------------- read raw data --------------------
-df_2014 = pd.read_csv(DATA_DIR / "raw2014.csv", index_col=0)
-df_2019 = pd.read_csv(DATA_DIR / "raw2019.csv", index_col=0)
+df_2015 = pd.read_csv(DATA_DIR / "raw2015.csv", index_col=0)
+df_2018 = pd.read_csv(DATA_DIR / "raw2019.csv", index_col=0)
+df_2021 = pd.read_csv(DATA_DIR / "raw2021.csv", index_col=0)
 df_2024 = pd.read_csv(DATA_DIR / "raw2024.csv", index_col=0)
 
 # -------------------- data cleaning --------------------
-dfs = {2014: df_2014,
-       2019: df_2019,
+dfs = {2015: df_2015,
+       2018: df_2018,
+       2021: df_2021,
        2024: df_2024}
 
 for year in dfs.keys():
@@ -56,8 +58,9 @@ for year in dfs.keys():
 
 
 # -------------------- common stations --------------------
-common_stations = set(dfs[2014]["station"]) \
-    & set(dfs[2019]["station"]) \
+common_stations = set(dfs[2015]["station"]) \
+    & set(dfs[2018]["station"]) \
+    & set(dfs[2021]["station"]) \
     & set(dfs[2024]["station"])
 
 # sanity check: number of common stations

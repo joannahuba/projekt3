@@ -43,7 +43,7 @@ def clean_gios_df(df, year):
     - removing that header row from the data,
     - standardizing the timestamp column name to 'Datetime'.
     """
-    if year > 2014:
+    if year > 2015:
         df = df.drop(index=[0, 2, 3, 4, 5])
     else:
         df = df.drop(index=[1, 2])

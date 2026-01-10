@@ -17,13 +17,14 @@ DATA_DIR = Path("data/raw")
 DATA_DIR.mkdir(exist_ok=True)
 
 gios_archive_url = "https://powietrze.gios.gov.pl/pjp/archives/downloadFile/"
-gios_ids = {2014: "302", 2019: "322", 2024: "582"}
+gios_ids = {2015: "236", 2018: "603", 2021: "486", 2024: "582"}
 gios_files = {
-    2014: "2014_PM2.5_1g.xlsx",
-    2019: "2019_PM25_1g.xlsx",
-    2024: "2024_PM25_1g.xlsx",
-}
-years = [2014, 2019, 2024]
+    2015: "2015_PM25_1g.xlsx",
+    2018: "2018_PM25_1g.xlsx",
+    2021: "2021_PM25_1g.xlsx",
+    2024: "2024_PM25_1g.xlsx"
+    }
+years = [2015, 2018, 2021, 2024]
 
 for year in years:
     raw = download_gios_archive(
@@ -33,9 +34,6 @@ for year in years:
         gios_files[year]
     )
     logger.info(
-        #f"Year: {year}: {raw.shape[0]} records, "
-        #f"{raw['station'].nunique()} stations, "
-        #f"{raw['city'].nunique()} cities,"
         f"Columns:{raw.columns}"
 
     )

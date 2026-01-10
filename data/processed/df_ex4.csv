@@ -1,52 +1,91 @@
 year,station,city,exceeded
-2014,DsWrocAlWisn,Wrocław,120
-2014,KpBydPlPozna,Bydgoszcz,101
-2014,LdLodzCzerni,Łódź,131
-2014,LdZgieMielcz,Zgierz,95
-2014,LuZielKrotka,Zielona Góra,105
-2014,MpKrakAlKras,Kraków,153
-2014,MpKrakBulwar,Kraków,123
-2014,MzLegZegrzyn,Legionowo,121
-2014,MzPlocMiReja,Płock,108
-2014,MzRadTochter,Radom,126
-2014,MzSiedKonars,Siedlce,116
-2014,MzWarAlNiepo,Warszawa,144
-2014,MzWarWokalna,Warszawa,114
-2014,MzZyraRoosev,Żyrardów,119
-2014,OpKKozBSmial,Kędzierzyn-Koźle,126
-2014,PkPrzemGrunw,Przemyśl,107
-2014,SlKatoKossut,Katowice,113
-2014,SlZlotPotLes,Złoty Potok,88
-2014,WmOlsPuszkin,Olsztyn,114
-2014,WpKaliSawick,Kalisz,135
-2019,DsWrocAlWisn,Wrocław,69
-2019,KpBydPlPozna,Bydgoszcz,92
-2019,LdLodzCzerni,Łódź,73
-2019,LdZgieMielcz,Zgierz,110
-2019,LuZielKrotka,Zielona Góra,41
-2019,MpKrakAlKras,Kraków,122
-2019,MpKrakBulwar,Kraków,79
-2019,MzLegZegrzyn,Legionowo,87
-2019,MzPlocMiReja,Płock,76
-2019,MzRadTochter,Radom,83
-2019,MzSiedKonars,Siedlce,84
-2019,MzWarAlNiepo,Warszawa,126
-2019,MzWarWokalna,Warszawa,69
-2019,MzZyraRoosev,Żyrardów,74
-2019,OpKKozBSmial,Kędzierzyn-Koźle,74
-2019,PkPrzemGrunw,Przemyśl,68
-2019,SlKatoKossut,Katowice,96
-2019,SlZlotPotLes,Złoty Potok,63
-2019,WmOlsPuszkin,Olsztyn,55
-2019,WpKaliSawick,Kalisz,79
+2015,DsJelGorOgin,Jelenia Góra,6
+2015,DsWrocAlWisn,Wrocław,11
+2015,DsWrocWybCon,Wrocław,10
+2015,KpBydPlPozna,Bydgoszcz,10
+2015,LbLubObywate,Lublin,11
+2015,LdLodzCzerni,Łódź,9
+2015,LdZgieMielcz,Zgierz,10
+2015,LuZielKrotka,Zielona Góra,8
+2015,MpKrakAlKras,Kraków,14
+2015,MpKrakBulwar,Kraków,12
+2015,MzLegZegrzyn,Legionowo,12
+2015,MzPiasPulask,Piastów,13
+2015,MzPlocMiReja,Płock,12
+2015,MzRadTochter,Radom,11
+2015,MzSiedKonars,Siedlce,9
+2015,MzWarAlNiepo,Warszawa,10
+2015,MzWarWokalna,Warszawa,10
+2015,MzZyraRoosev,Żyrardów,13
+2015,OpKKozBSmial,Kędzierzyn-Koźle,11
+2015,PdBialUpalna,Białystok,8
+2015,PkPrzemGrunw,Przemyśl,13
+2015,SlKatoKossut,Katowice,12
+2015,SlZlotPotLes,Złoty Potok,10
+2015,WmOlsPuszkin,Olsztyn,11
+2015,WpKaliSawick,Kalisz,9
+2018,DsJelGorOgin,Jelenia Góra,62
+2018,DsWrocAlWisn,Wrocław,69
+2018,DsWrocWybCon,Wrocław,59
+2018,KpBydPlPozna,Bydgoszcz,92
+2018,LbLubObywate,Lublin,90
+2018,LdLodzCzerni,Łódź,73
+2018,LdZgieMielcz,Zgierz,110
+2018,LuZielKrotka,Zielona Góra,41
+2018,MpKrakAlKras,Kraków,122
+2018,MpKrakBulwar,Kraków,79
+2018,MzLegZegrzyn,Legionowo,87
+2018,MzPiasPulask,Piastów,81
+2018,MzPlocMiReja,Płock,76
+2018,MzRadTochter,Radom,83
+2018,MzSiedKonars,Siedlce,84
+2018,MzWarAlNiepo,Warszawa,126
+2018,MzWarWokalna,Warszawa,69
+2018,MzZyraRoosev,Żyrardów,74
+2018,OpKKozBSmial,Kędzierzyn-Koźle,74
+2018,PdBialUpalna,Białystok,45
+2018,PkPrzemGrunw,Przemyśl,68
+2018,SlKatoKossut,Katowice,96
+2018,SlZlotPotLes,Złoty Potok,63
+2018,WmOlsPuszkin,Olsztyn,55
+2018,WpKaliSawick,Kalisz,79
+2021,DsJelGorOgin,Jelenia Góra,73
+2021,DsWrocAlWisn,Wrocław,98
+2021,DsWrocWybCon,Wrocław,75
+2021,KpBydPlPozna,Bydgoszcz,60
+2021,LbLubObywate,Lublin,103
+2021,LdLodzCzerni,Łódź,78
+2021,LdZgieMielcz,Zgierz,87
+2021,LuZielKrotka,Zielona Góra,49
+2021,MpKrakAlKras,Kraków,113
+2021,MpKrakBulwar,Kraków,98
+2021,MzLegZegrzyn,Legionowo,83
+2021,MzPiasPulask,Piastów,76
+2021,MzPlocMiReja,Płock,74
+2021,MzRadTochter,Radom,83
+2021,MzSiedKonars,Siedlce,75
+2021,MzWarAlNiepo,Warszawa,99
+2021,MzWarWokalna,Warszawa,69
+2021,MzZyraRoosev,Żyrardów,93
+2021,OpKKozBSmial,Kędzierzyn-Koźle,82
+2021,PdBialUpalna,Białystok,66
+2021,PkPrzemGrunw,Przemyśl,82
+2021,SlKatoKossut,Katowice,90
+2021,SlZlotPotLes,Złoty Potok,79
+2021,WmOlsPuszkin,Olsztyn,65
+2021,WpKaliSawick,Kalisz,92
+2024,DsJelGorOgin,Jelenia Góra,50
 2024,DsWrocAlWisn,Wrocław,69
+2024,DsWrocWybCon,Wrocław,66
 2024,KpBydPlPozna,Bydgoszcz,59
+2024,LbLubObywate,Lublin,74
 2024,LdLodzCzerni,Łódź,63
 2024,LdZgieMielcz,Zgierz,75
 2024,LuZielKrotka,Zielona Góra,68
 2024,MpKrakAlKras,Kraków,83
 2024,MpKrakBulwar,Kraków,67
 2024,MzLegZegrzyn,Legionowo,51
+2024,MzPiasPulask,Piastów,58
 2024,MzPlocMiReja,Płock,60
 2024,MzRadTochter,Radom,73
 2024,MzSiedKonars,Siedlce,39
@@ -54,6 +93,7 @@ year,station,city,exceeded
 2024,MzWarWokalna,Warszawa,47
 2024,MzZyraRoosev,Żyrardów,62
 2024,OpKKozBSmial,Kędzierzyn-Koźle,55
+2024,PdBialUpalna,Białystok,32
 2024,PkPrzemGrunw,Przemyśl,68
 2024,SlKatoKossut,Katowice,76
 2024,SlZlotPotLes,Złoty Potok,56
