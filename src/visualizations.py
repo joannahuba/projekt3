@@ -45,14 +45,14 @@ def plot_city_trends(
     return fig
 
 
-#Heatmapa do zad. 3 
+# Heatmapa do zad. 3 
 
 def plot_city_heatmaps(
     df_ex3: pd.DataFrame,
     cities: Sequence[str],
     years: Sequence[int] = (2015, 2018, 2021, 2024),
-    ncols: int = 3,
-    figsize_per_panel: Tuple[float, float] = (4.2, 3.4),
+    ncols: int = 4,
+    figsize_per_panel: Tuple[float, float] = (3.2, 2.6),
     annot: bool = False,
     fmt: str = ".1f",
 ) -> plt.Figure:
@@ -66,6 +66,7 @@ def plot_city_heatmaps(
 
     df_plot = df_ex3[df_ex3["city"].isin(list(cities))].copy()
 
+    # wspólna skala kolorów
     vmin = float(df_plot["PM2.5"].min())
     vmax = float(df_plot["PM2.5"].max())
 
@@ -74,14 +75,10 @@ def plot_city_heatmaps(
 
     fig_w = figsize_per_panel[0] * ncols
     fig_h = figsize_per_panel[1] * nrows
-    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(fig_w, fig_h), sharex=True, sharey=True)
+    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(fig_w, fig_h))
 
-    # gdy nrows*ncols == 1, axes nie jest tablicą
-    if not isinstance(axes, (list, tuple)) and not hasattr(axes, "__len__"):
-        axes = [axes]
-    else:
-        axes = axes.flatten()
-        
+    axes = axes.flatten()
+
     mappable = None
 
     for ax, city in zip(axes, cities):
@@ -101,20 +98,26 @@ def plot_city_heatmaps(
             cmap="coolwarm",
             vmin=vmin,
             vmax=vmax,
-            cbar=False  
+            cbar=False
         )
 
         mappable = hm.collections[0]
 
-        ax.set_title(city)
-        ax.set_xlabel("Miesiąc")
-        ax.set_ylabel("Rok")
+        ax.set_title(city, fontsize=10)
+        ax.set_xlabel("")
+        ax.set_ylabel("")
 
+        # małe ticki, żeby się zmieściło
+        ax.tick_params(axis="x", labelrotation=0, labelsize=8)
+        ax.tick_params(axis="y", labelsize=8)
+
+    # wyłącz puste panele
     for ax in axes[len(cities):]:
         ax.axis("off")
 
+    # wspólny colorbar z prawej
     if mappable is not None:
-        cbar = fig.colorbar(mappable, ax=axes[:len(cities)], shrink=0.9)
+        cbar = fig.colorbar(mappable, ax=axes[:len(cities)], shrink=0.9, pad=0.02)
         cbar.set_label("Średnie miesięczne PM2.5")
 
     fig.tight_layout()
