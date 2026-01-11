@@ -1,5 +1,6 @@
 import pandas as pd
 
+# funkcja do zadania 2:
 def make_trend_df(df_ex2: pd.DataFrame, years=(2015, 2024)) -> pd.DataFrame:
     """
     Przygotowuję dataframe do analizy trendów średnich miesięcznych
@@ -49,7 +50,45 @@ def trend_sanity_summary(trend_df: pd.DataFrame) -> dict:
         "mean_pm25_city_year": mean_pm25_city_year,
     }
 
+# Funkcja do zadania 3:
+def prepare_ex3_heatmap_df(monthly_PM25: pd.DataFrame) -> pd.DataFrame:
+    """
+    Przygotowuję dane do heatmap średnich miesięcznych PM2.5.
+    Uśrednienie po wszystkich stacjach w danej miejscowości.
+    """
+    required = {"city", "year", "month", "PM2.5"}
+    missing = required - set(monthly_PM25.columns)
+    if missing:
+        raise ValueError(f"Brakuje kolumn w monthly_PM25: {sorted(missing)}")
 
-def save_trend_df(trend_df: pd.DataFrame, out_path) -> None:
-    trend_df.to_csv(out_path, index=False)
+    df_ex3 = (
+        monthly_PM25
+        .groupby(["city", "year", "month"], as_index=False)[["PM2.5"]]
+        .mean()
+    )
+
+    return df_ex3
+    
+ #sanity checks:   
+def heatmap_sanity_summary(df_ex3: pd.DataFrame) -> dict:
+    years_present = sorted(df_ex3["year"].dropna().unique().tolist())
+    cities_present = sorted(df_ex3["city"].dropna().unique().tolist())
+
+    months_per_city_year = (
+        df_ex3.groupby(["city", "year"])["month"].nunique().unstack()
+        if len(df_ex3) else None
+    )
+
+    pm25_minmax = (
+        (float(df_ex3["PM2.5"].min()), float(df_ex3["PM2.5"].max()))
+        if len(df_ex3) else (None, None)
+    )
+
+    return {
+        "years_present": years_present,
+        "n_cities": len(cities_present),
+        "months_per_city_year": months_per_city_year,
+        "pm25_min": pm25_minmax[0],
+        "pm25_max": pm25_minmax[1],
+    }
 
