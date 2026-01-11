@@ -15,11 +15,6 @@ def plot_city_trends(
     figsize: Tuple[float, float] = (10, 6),
 ) -> plt.Figure:
 
-    required = {"city", "year", "month", "PM2.5"}
-    missing = required - set(trend_df.columns)
-    if missing:
-        raise ValueError(f"trend_df nie ma kolumn: {sorted(missing)}")
-
     fig, ax = plt.subplots(figsize=figsize)
 
     for city in cities:
@@ -46,80 +41,73 @@ def plot_city_trends(
 
 
 # Heatmapa do zad. 3 
-
 def plot_city_heatmaps(
     df_ex3: pd.DataFrame,
     cities: Sequence[str],
     years: Sequence[int] = (2015, 2018, 2021, 2024),
     ncols: int = 4,
-    figsize_per_panel: Tuple[float, float] = (3.2, 2.6),
+    figsize_per_panel: Tuple[float, float] = (2.6, 2.2),
     annot: bool = False,
     fmt: str = ".1f",
 ) -> plt.Figure:
 
-    required = {"city", "year", "month", "PM2.5"}
-    missing = required - set(df_ex3.columns)
-    if missing:
-        raise ValueError(f"df_ex3 nie ma kolumn: {sorted(missing)}")
-
     sns.set_theme(style="white")
-
-    df_plot = df_ex3[df_ex3["city"].isin(list(cities))].copy()
-
-    # wspólna skala kolorów
+    df_plot = df_ex3[df_ex3["city"].isin(cities)].copy()
     vmin = float(df_plot["PM2.5"].min())
     vmax = float(df_plot["PM2.5"].max())
-
     n_panels = len(cities)
     nrows = math.ceil(n_panels / ncols)
 
-    fig_w = figsize_per_panel[0] * ncols
-    fig_h = figsize_per_panel[1] * nrows
-    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(fig_w, fig_h))
-
+    fig, axes = plt.subplots(
+        nrows=nrows,
+        ncols=ncols,
+        figsize=(figsize_per_panel[0] * ncols,
+                 figsize_per_panel[1] * nrows),
+        constrained_layout=True
+    )
     axes = axes.flatten()
-
     mappable = None
-
+    
+    #rysowanie heatmapy dla kazdego miasta:
     for ax, city in zip(axes, cities):
         data = df_plot[df_plot["city"] == city]
 
         heatmap_data = (
             data.pivot(index="year", columns="month", values="PM2.5")
-            .reindex(index=list(years))
-            .reindex(columns=list(range(1, 13)))
+            .reindex(index=years)
+            .reindex(columns=range(1, 13))
         )
 
         hm = sns.heatmap(
-            heatmap_data.astype(float),
+            heatmap_data,
             ax=ax,
-            annot=annot,
-            fmt=fmt,
             cmap="coolwarm",
             vmin=vmin,
             vmax=vmax,
+            annot=annot,
+            fmt=fmt,
             cbar=False
         )
 
-        mappable = hm.collections[0]
+        mappable = hm.collections[0]  #mapowanie kolorów do legendy
 
-        ax.set_title(city, fontsize=10)
+        ax.set_title(city, fontsize=9)
         ax.set_xlabel("")
         ax.set_ylabel("")
+        ax.tick_params(labelsize=7)
 
-        # małe ticki, żeby się zmieściło
-        ax.tick_params(axis="x", labelrotation=0, labelsize=8)
-        ax.tick_params(axis="y", labelsize=8)
 
-    # wyłącz puste panele
     for ax in axes[len(cities):]:
         ax.axis("off")
 
-    # wspólny colorbar z prawej
     if mappable is not None:
-        cbar = fig.colorbar(mappable, ax=axes[:len(cities)], shrink=0.9, pad=0.02)
+        cbar = fig.colorbar(
+            mappable,
+            ax=axes[:len(cities)],
+            orientation="horizontal",
+            fraction=0.05,
+            pad=0.08
+        )
         cbar.set_label("Średnie miesięczne PM2.5")
 
-    fig.tight_layout()
     return fig
-
