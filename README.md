@@ -16,18 +16,27 @@ Celem projektu jest:
 ```
 .
 ├── data
-│   ├── raw
-│   └── processed
-├── src
-│   ├── 01_download.py
-│   ├── 02_data_cleanining.py
-│   ├── utils.py
-│   └── tests.py
-├── tests
-│   └── tests.py
-├── README.md
+│   ├── processed
+│   └── raw
+├── main.py
 ├── pyproject.toml
-└── main.py
+├── README.md
+├── src
+│   ├── 01_download.py
+│   ├── 02_data_cleanining.py
+│   ├── exceeded_days_plot.html
+│   ├── means.py
+│   ├── projekt1.ipynb
+│   ├── __pycache__
+│   ├── utils.py
+│   └── visualizations.py
+├── tests
+│   ├── __pycache__
+│   ├── test_means.py
+│   ├── tests.py
+│   └── test_visualizations.py
+└── uv.lock
+
 ```
 
 ---
@@ -126,7 +135,7 @@ Projekt zawiera testy jednostkowe i integracyjne dla funkcji pomocniczych.
 Uruchomienie testów:
 
 ```bash
-pytest tests/*
+pytest tests
 ```
 
 Testy obejmują:
