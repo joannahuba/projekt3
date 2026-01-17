@@ -1,5 +1,5 @@
 # Analiza stężeń PM2.5 w Polsce na podstawie danych GIOŚ
-
+   
 Projekt służy do pobierania, czyszczenia, przekształcania i analizowania danych dotyczących stężeń pyłu PM2.5 z Głównego Inspektoratu Ochrony Środowiska (GIOŚ) dla wybranych lat: 2015, 2018, 2021, 2024.
 
 Celem projektu jest:
