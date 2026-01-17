@@ -202,9 +202,9 @@ co umożliwia analizę sezonowości stężeń PM2.5 w obrębie miasta.
 Dla każdej stacji obliczono liczbę dni w roku, w których
 dobowestężenie PM2.5 przekraczało zalecaną normę WHO
 
-Dane  wykorzystywane w analizie zapisane są w zbiorze df_ex4.csv
+Dane  wykorzystywane w analizie zapisane są w zbiorze `df_ex4.csv`
 Wizualizacja wyników wykonywana jest w module:
-- 'utils.py' - funkcja 'plot_exceeded_days_top_bottom'.
+- `utils.py` - funkcja `plot_exceeded_days_top_bottom`.
 Analiza umożliwia porównanie skali problemu przekroczeń normy PM2.5
 pomiędzy stacjami pomiarowymi oraz ocenę zróżnicowania przestrzennego jakości powietrza.
 
