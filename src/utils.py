@@ -112,3 +112,76 @@ def add_city(df, metadata):
     df["city"] = df["station"].map(station_city)
     return df
 
+
+import pandas as pd
+import plotly.graph_objects as go
+
+def plot_exceeded_days_top_bottom(
+    df_ex4,
+    year=2024,
+    top_n=3,
+):
+    """
+    Creates a grouped bar plot for stations with the highest and lowest
+    number of exceeded PM2.5 days in a given year.
+
+    Parameters:
+    - df_ex4 (pd.DataFrame): DataFrame with columns ['year', 'station', 'exceeded']
+    - year (int): Reference year for selecting top/bottom stations
+    - top_n (int): Number of top and bottom stations to include
+    """
+    df_year = df_ex4[df_ex4["year"] == year]
+
+    top = df_year.nlargest(top_n, "exceeded")
+    bottom = df_year.nsmallest(top_n, "exceeded")
+    stations = pd.concat([top, bottom])["station"].unique()
+
+    plot_df = df_ex4[df_ex4["station"].isin(stations)].copy()
+
+    station_groups = plot_df["station"].unique()
+
+    colors = [
+        "#7FB3D5",
+        "#1F618D",
+        "#F4D03F",
+        "#C0392B",
+        "#008080",
+        "#40B0A6"
+    ]
+
+    bars = []
+    for i, station in enumerate(station_groups):
+        df_station = plot_df[plot_df["station"] == station]
+        bar = go.Bar(
+            x=df_station["year"],
+            y=df_station["exceeded"],
+            name=station,
+            marker=dict(color=colors[i % len(colors)])
+        )
+        bars.append(bar)
+
+    fig = go.Figure(data=bars)
+    fig.update_layout(
+        height=800,
+        font=dict(
+            family="Liberation Serif",
+            size=20,
+            color="#2C3E50"
+        ),
+        barmode="group",
+        title=dict(
+            text="Dni z przekroczeniem normy (WHO)",
+            x=0.5,
+            xanchor="center",
+            font=dict(
+                family="Liberation Serif",
+                size=35,
+                color="#2C3E50"
+            )
+        ),
+        xaxis_title="Rok",
+        yaxis_title="Liczba przekroczonych dni",
+    )
+
+    return fig
+
