@@ -133,7 +133,6 @@ logger.info(
     f"Maksymalna liczba dni z przekroczeniem: {df_ex4['exceeded'].max()}"
 )
 
-
 print("\n--- combined_df (head) ---")
 print(combined_df.head())
 

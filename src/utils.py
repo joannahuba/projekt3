@@ -93,7 +93,12 @@ def to_long(df):
         value_name="PM2.5"
     )
 
-    # ensure PM2.5 is numeric
+    # replace commas with dots and coerce to numeric
+    long_df["PM2.5"] = (
+        long_df["PM2.5"]
+        .astype(str)
+        .str.replace(",", ".", regex=False)
+    )
     long_df["PM2.5"] = pd.to_numeric(long_df["PM2.5"], errors="coerce")
 
     return long_df
