@@ -157,3 +157,55 @@ W projekcie analizowane są:
 * porównanie wybranych miast (np. Warszawa, Katowice).
 
 ---
+
+## Średnie miesięczne i trend dla miast
+
+Na podstawie danych miesięcznych przygotowano zbiór danych
+obejmujący wyłącznie interesujące lata (2015 oraz 2024),
+a następnie obliczono średnie miesięczne stężenia PM2.5
+po wszystkich stacjach zlokalizowanych w danym mieście.
+
+Przygotowanie danych realizowane jest w module:
+- `means.py` – funkcja `make_trend_df`.
+
+Poprawność i kompletność danych kontrolowana jest za pomocą:
+- `trend_sanity_summary`.
+
+Wizualizacja trendów wykonywana jest w module:
+- `visualizations.py` – funkcja `plot_city_trends`.
+
+Wyniki analizy prezentowane są w postaci wykresów liniowych 
+przedstawiających zmiany stężeń PM2.5 w kolejnych miesiącach.
+
+---
+
+## Heatmapy średnich miesięcznych stężeń PM2.5
+
+Dla każdej miejscowości przygotowano heatmapy prezentujące
+średnie miesięczne stężenia PM2.5 w latach 2015, 2018, 2021 oraz 2024.
+
+Przygotowanie danych do heatmap realizowane jest w module:
+- `means.py` – funkcja `prepare_ex3_heatmap_df`.
+
+Kontrola zakresów wartości oraz kompletności danych wykonywana jest przez:
+- `heatmap_sanity_summary`.
+
+Wizualizacja heatmap realizowana jest w module:
+- `visualizations.py` – funkcja `plot_city_heatmaps`.
+
+Każda miejscowość prezentowana jest na osobnym panelu,
+co umożliwia analizę sezonowości stężeń PM2.5 w obrębie miasta.
+
+---
+
+## Dni z przekroczeniem normy PM2.5 (WHO)
+Dla każdej stacji obliczono liczbę dni w roku, w których
+dobowestężenie PM2.5 przekraczało zalecaną normę WHO
+
+Dane  wykorzystywane w analizie zapisane są w zbiorze df_ex4.csv
+Wizualizacja wyników wykonywana jest w module:
+- 'utils.py' - funkcja 'plot_exceeded_days_top_bottom'.
+Analiza umożliwia porównanie skali problemu przekroczeń normy PM2.5
+pomiędzy stacjami pomiarowymi oraz ocenę zróżnicowania przestrzennego jakości powietrza.
+
+
