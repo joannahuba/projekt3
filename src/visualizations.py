@@ -120,3 +120,30 @@ def plot_city_heatmaps(
         ax.axis("off")
 
     return fig
+
+#Wizualizacja do zadania 7
+def plot_voivodeship_stats(stats_df: pd.DataFrame) -> plt.Figure:
+    """
+    Rysuje wykres słupkowy średniej liczby dni z przekroczeniem normy PM2.5
+    dla województw z podziałem na lata.
+    """
+    fig, ax = plt.subplots(figsize=(14, 7))
+
+    sns.barplot(
+        data=stats_df,
+        x="Województwo",
+        y="avg_exceeded_days",
+        hue="year",
+        palette="viridis",
+        ax=ax
+    )
+
+    ax.set_title("Średnia liczba dni z przekroczeniem normy PM2.5 wg województw", fontsize=14, weight='bold')
+    ax.set_xlabel("Województwo", fontsize=12)
+    ax.set_ylabel("Średnia liczba dni > 15 µg/m³ (na stację)", fontsize=12)
+    ax.legend(title="Rok")
+    
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+
+    return fig
