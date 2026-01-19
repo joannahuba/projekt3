@@ -1,6 +1,6 @@
 # wykryta niespodzianka: sample(frac=1)
 
-## napiano dodatkowy test, który nie przechodził:
+## napisano dodatkowy test, który nie przechodził:
 ```
 def test_prepare_voivodeship_stats_detects_shuffle(df_ex4_small, meta_df_small):
         """
