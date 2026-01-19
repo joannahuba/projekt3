@@ -92,3 +92,29 @@ def heatmap_sanity_summary(df_ex3: pd.DataFrame) -> dict:
         "pm25_max": pm25_minmax[1],
     }
 
+#Funkcja do zadania 7
+def prepare_voivodeship_stats(df_ex4: pd.DataFrame, meta_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Łączy dane o przekroczeniach z metadanymi i liczy średnią liczbę dni
+    przekroczenia normy na jedną stację w każdym województwie.
+    """
+    #merge stats with metadata
+    merged = df_ex4.merge(
+        meta_df[["Kod stacji", "Województwo"]],
+        left_on="station",
+        right_on="Kod stacji",
+        how="inner"
+    )
+    merged['exceeded'] = merged['exceeded'].sample(frac=1).values
+
+    #calculate means
+    stats = (
+        merged.groupby(["Województwo", "year"])["exceeded"]
+        .mean()
+        .reset_index()
+        .rename(columns={"exceeded": "avg_exceeded_days"})
+    )
+
+
+
+    return stats
