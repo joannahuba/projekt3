@@ -22,7 +22,7 @@ logger.info(f"Kolumny metadanych: {list(meta_df.columns)}")
 
 # -------------------- read raw data --------------------
 df_2015 = pd.read_csv(DATA_DIR / "raw2015.csv", index_col=0)
-df_2018 = pd.read_csv(DATA_DIR / "raw2019.csv", index_col=0)
+df_2018 = pd.read_csv(DATA_DIR / "raw2018.csv", index_col=0)
 df_2021 = pd.read_csv(DATA_DIR / "raw2021.csv", index_col=0)
 df_2024 = pd.read_csv(DATA_DIR / "raw2024.csv", index_col=0)
 

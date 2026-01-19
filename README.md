@@ -1,3 +1,40 @@
+# wykryta niespodzianka: sample(frac=1)
+
+## napiano dodatkowy test, który nie przechodził:
+```
+def test_prepare_voivodeship_stats_detects_shuffle(df_ex4_small, meta_df_small):
+        """
+        Test sprawdza, czy prepare_voivodeship_stats zwraca poprawne średnie.
+        Jeśli w funkcji jest 'sample(frac=1)', test powinien wywalić błąd.
+        """
+        stats = prepare_voivodeship_stats(df_ex4_small, meta_df_small)
+    
+        # Obliczamy oczekiwane średnie ręcznie
+        expected = df_ex4_small.merge(
+            meta_df_small, left_on="station", right_on="Kod stacji"
+        ).groupby(["Województwo", "year"])["exceeded"].mean().reset_index()
+        expected = expected.rename(columns={"exceeded": "avg_exceeded_days"})
+    
+        for idx, row in expected.iterrows():
+            stat_row = stats[
+                (stats["Województwo"] == row["Województwo"]) &
+                (stats["year"] == row["year"])
+            ]
+            # Jeśli wartości nie zgadzają się dokładnie -> fail
+>           assert abs(stat_row["avg_exceeded_days"].values[0] - row["avg_exceeded_days"]) < 1e-6, \
+                f"Detected unexpected shuffling in {row['Województwo']} year {row['year']}"
+E           AssertionError: Detected unexpected shuffling in Mazowieckie year 2024
+E           assert np.float64(2.5) < 1e-06
+E            +  where np.float64(2.5) = abs((np.float64(12.5) - 15.0))
+
+tests/test_means.py:94: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_means.py::test_prepare_voivodeship_stats_detects_shuffle - AssertionError: Detected unexpected shuffling in Mazowieckie year 2024
+========================= 1 failed, 4 passed in 0.47s ==========================
+```
+
+więc usunięto niespodziankę i testy zaczęły przechodzić
+
 # Analiza stężeń PM2.5 w Polsce na podstawie danych GIOŚ
    
 Projekt służy do pobierania, czyszczenia, przekształcania i analizowania danych dotyczących stężeń pyłu PM2.5 z Głównego Inspektoratu Ochrony Środowiska (GIOŚ) dla wybranych lat: 2015, 2018, 2021, 2024.

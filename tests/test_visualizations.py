@@ -91,7 +91,8 @@ def test_plot_city_heatmaps_month_ticks_are_1_to_12(df_ex3_small):
 
 
 def test_plot_city_heatmaps_ignores_unknown_city(df_ex3_small):
-    # Test z miatem, którego nie ma w danych:
+    # Test z miastem, którego nie ma w danych:
     cities = ["A", "B", "NIE_ISTNIEJE"]
     fig = plot_city_heatmaps(df_ex3_small, cities=cities, ncols=4)
     assert hasattr(fig, "axes")
+

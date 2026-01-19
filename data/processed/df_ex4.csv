@@ -3,6 +3,7 @@ year,station,city,exceeded
 2015,DsWrocAlWisn,Wrocław,11
 2015,DsWrocWybCon,Wrocław,10
 2015,KpBydPlPozna,Bydgoszcz,10
+2015,KpBydWarszaw,Bydgoszcz,7
 2015,LbLubObywate,Lublin,11
 2015,LdLodzCzerni,Łódź,9
 2015,LdZgieMielcz,Zgierz,10
@@ -24,35 +25,37 @@ year,station,city,exceeded
 2015,SlZlotPotLes,Złoty Potok,10
 2015,WmOlsPuszkin,Olsztyn,11
 2015,WpKaliSawick,Kalisz,9
-2018,DsJelGorOgin,Jelenia Góra,62
-2018,DsWrocAlWisn,Wrocław,69
-2018,DsWrocWybCon,Wrocław,59
-2018,KpBydPlPozna,Bydgoszcz,92
-2018,LbLubObywate,Lublin,90
-2018,LdLodzCzerni,Łódź,73
-2018,LdZgieMielcz,Zgierz,110
-2018,LuZielKrotka,Zielona Góra,41
-2018,MpKrakAlKras,Kraków,122
-2018,MpKrakBulwar,Kraków,79
-2018,MzLegZegrzyn,Legionowo,87
-2018,MzPiasPulask,Piastów,81
-2018,MzPlocMiReja,Płock,76
-2018,MzRadTochter,Radom,83
-2018,MzSiedKonars,Siedlce,84
-2018,MzWarAlNiepo,Warszawa,126
-2018,MzWarWokalna,Warszawa,69
-2018,MzZyraRoosev,Żyrardów,74
-2018,OpKKozBSmial,Kędzierzyn-Koźle,74
-2018,PdBialUpalna,Białystok,45
-2018,PkPrzemGrunw,Przemyśl,68
-2018,SlKatoKossut,Katowice,96
-2018,SlZlotPotLes,Złoty Potok,63
-2018,WmOlsPuszkin,Olsztyn,55
-2018,WpKaliSawick,Kalisz,79
+2018,DsJelGorOgin,Jelenia Góra,90
+2018,DsWrocAlWisn,Wrocław,112
+2018,DsWrocWybCon,Wrocław,96
+2018,KpBydPlPozna,Bydgoszcz,112
+2018,KpBydWarszaw,Bydgoszcz,114
+2018,LbLubObywate,Lublin,117
+2018,LdLodzCzerni,Łódź,99
+2018,LdZgieMielcz,Zgierz,120
+2018,LuZielKrotka,Zielona Góra,73
+2018,MpKrakAlKras,Kraków,150
+2018,MpKrakBulwar,Kraków,105
+2018,MzLegZegrzyn,Legionowo,108
+2018,MzPiasPulask,Piastów,112
+2018,MzPlocMiReja,Płock,89
+2018,MzRadTochter,Radom,121
+2018,MzSiedKonars,Siedlce,100
+2018,MzWarAlNiepo,Warszawa,119
+2018,MzWarWokalna,Warszawa,107
+2018,MzZyraRoosev,Żyrardów,114
+2018,OpKKozBSmial,Kędzierzyn-Koźle,120
+2018,PdBialUpalna,Białystok,75
+2018,PkPrzemGrunw,Przemyśl,108
+2018,SlKatoKossut,Katowice,130
+2018,SlZlotPotLes,Złoty Potok,98
+2018,WmOlsPuszkin,Olsztyn,91
+2018,WpKaliSawick,Kalisz,95
 2021,DsJelGorOgin,Jelenia Góra,73
 2021,DsWrocAlWisn,Wrocław,98
 2021,DsWrocWybCon,Wrocław,75
 2021,KpBydPlPozna,Bydgoszcz,60
+2021,KpBydWarszaw,Bydgoszcz,65
 2021,LbLubObywate,Lublin,103
 2021,LdLodzCzerni,Łódź,78
 2021,LdZgieMielcz,Zgierz,87
@@ -78,6 +81,7 @@ year,station,city,exceeded
 2024,DsWrocAlWisn,Wrocław,69
 2024,DsWrocWybCon,Wrocław,66
 2024,KpBydPlPozna,Bydgoszcz,59
+2024,KpBydWarszaw,Bydgoszcz,59
 2024,LbLubObywate,Lublin,74
 2024,LdLodzCzerni,Łódź,63
 2024,LdZgieMielcz,Zgierz,75
